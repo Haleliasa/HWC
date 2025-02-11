@@ -6,7 +6,7 @@ namespace HWC.Server {
     public class GameService : IGameService {
         public Task<Result<Battle>> StartBattle(
             Action<Turn> onTurn,
-            Action<BattleFinishStatus> onFinish
+            Action<BattleFinish> onFinish
         ) {
             throw new NotImplementedException();
         }

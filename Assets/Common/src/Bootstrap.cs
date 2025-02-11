@@ -6,11 +6,14 @@ namespace HWC {
         [SerializeField]
         private Battlefield.Battlefield battlefield;
 
+        [SerializeField]
+        private new Camera camera;
+
         private const string logTag = nameof(Bootstrap);
 
         private GameController gameController;
 
-        private async void Start() {
+        private void Start() {
             IGameService gameService;
             ILogger logger = Debug.unityLogger;
 
@@ -23,17 +26,10 @@ namespace HWC {
             return;
 #endif
 
-            this.gameController = new(
-                gameService,
-                this.battlefield,
-                logger
-            );
+            this.battlefield.Init(this.camera);
 
-            if (!await this.gameController.Start()) {
-                Utils.Quit();
-
-                return;
-            }
+            this.gameController = new(gameService, this.battlefield, logger);
+            this.gameController.Start();
         }
     }
 }

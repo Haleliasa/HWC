@@ -1,19 +1,19 @@
 ﻿namespace HWC.API {
     public struct Effect {
-        public int id;
+        public int index;
         public int unitIndex;
         public EffectType type;
         public int value;
         public int duration;
 
         public Effect(
-            int id,
+            int index,
             int unitIndex,
             EffectType type,
             int value,
             int duration
         ) {
-            this.id = id;
+            this.index = index;
             this.unitIndex = unitIndex;
             this.type = type;
             this.value = value;

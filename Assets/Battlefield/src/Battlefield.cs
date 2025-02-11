@@ -1,3 +1,4 @@
+using HWC.Characters;
 using UnityEngine;
 
 namespace HWC.Battlefield {
@@ -11,5 +12,10 @@ namespace HWC.Battlefield {
         public Character PlayerCharacter => this.playerCharacter;
 
         public Character EnemyCharacter => this.enemyCharacter;
+
+        public void Init(Camera camera) {
+            this.playerCharacter.Init(camera);
+            this.enemyCharacter.Init(camera);
+        }
     }
 }

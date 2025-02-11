@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace HWC.API {
     public interface IGameService {
-        Task<Result<Battle>> StartBattle(Action<Turn> onTurn, Action<BattleFinishStatus> onFinish);
+        Task<Result<Battle>> StartBattle(Action<Turn> onTurn, Action<BattleFinish> onFinish);
 
         Task<Result> MakeTurn(int battleId, AbilityType ability);
 
