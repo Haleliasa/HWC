@@ -1,11 +1,13 @@
 ﻿namespace HWC.API {
     public struct Battle {
         public int id;
-        public Unit[] units;
+        public Unit playerUnit;
+        public Unit enemyUnit;
 
-        public Battle(int id, Unit[] units) {
+        public Battle(int id, Unit playerUnit, Unit enemyUnit) {
             this.id = id;
-            this.units = units;
+            this.playerUnit = playerUnit;
+            this.enemyUnit = enemyUnit;
         }
     }
 }

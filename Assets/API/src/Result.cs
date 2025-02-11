@@ -19,12 +19,13 @@ namespace HWC.API {
 
         public bool IsOk(
             [NotNullWhen(true)] out T? result,
-            [NotNullWhen(false)] out Error? error
+            out Error error
         ) {
             result = this.result;
-            error = this.error;
+            error = this.error ?? default;
 
-            return result != null;
+            return result != null
+                && !this.error.HasValue;
         }
     }
 
@@ -35,8 +36,10 @@ namespace HWC.API {
             this.error = error;
         }
 
-        public bool IsOk([NotNullWhen(false)] out Error? error) {
-            return (error = this.error) == null;
+        public bool IsOk(out Error error) {
+            error = this.error ?? default;
+
+            return !this.error.HasValue;
         }
     }
 }

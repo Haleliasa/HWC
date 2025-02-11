@@ -1,15 +1,20 @@
 ﻿namespace HWC.API {
     public struct Turn {
         public int buttleId;
-        public Unit[] units;
-        public Ability[] abilities;
-        public Effect[] effects;
+        public AbilityUse[] abilityUses;
+        public AbilityCooldown[] abilityCooldowns;
+        public Effect[] effectUpdates;
 
-        public Turn(int battleId, Unit[] units, Ability[] abilities, Effect[] effects) {
+        public Turn(
+            int battleId,
+            AbilityUse[] abilityUses,
+            AbilityCooldown[] abilityCooldowns,
+            Effect[] effectUpdates
+        ) {
             this.buttleId = battleId;
-            this.units = units;
-            this.abilities = abilities;
-            this.effects = effects;
+            this.abilityUses = abilityUses;
+            this.abilityCooldowns = abilityCooldowns;
+            this.effectUpdates = effectUpdates;
         }
     }
 }

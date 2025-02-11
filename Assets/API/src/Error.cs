@@ -7,5 +7,9 @@
             this.code = code;
             this.message = message;
         }
+
+        public override string ToString() {
+            return $"{(byte)this.code} - {this.code}: {this.message}";
+        }
     }
 }
